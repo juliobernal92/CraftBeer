@@ -1,0 +1,198 @@
+﻿<Page x:Class="CraftBeer.Paginas.pageDashboard"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CraftBeer.Paginas"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1100"
+      Title="Recetas">
+    <Border >
+        <Border>
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#E59E2B" Offset="0"/>
+                    <GradientStop Color="#A25C1E" Offset="0.75"/>
+                    <GradientStop Color="#E59E2B" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+                    <GradientStop Color="#F2D5A0" Offset="0"/>
+                    <GradientStop Color="#D4A768" Offset="1.5"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="20"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="20"/>
+                                <RowDefinition Height="180"/>
+                                <RowDefinition Height="20"/>
+                                <RowDefinition Height="180"/>
+                                <RowDefinition Height="20"/>
+                                <RowDefinition Height="180"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="1" Background="#A25C1E">
+                                <Label Content="Bienvenido/a" 
+                                       FontSize="20"
+                                       Foreground="Wheat"
+                                       VerticalContentAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"
+                                       x:Name="lblbienvenida"
+                                       />
+                            </Grid>
+                            <Grid Grid.Row="3" Background="#A25C1E" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0"
+                                           Text="Ultimas Ventas Realizadas:"
+                                           Foreground="Wheat"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Center"
+                                           FontSize="18"
+                                           />
+                                <Label Grid.Row="1"
+                                       Name="lblventa1"
+                                       FontSize="16"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       Content="Venta1"
+                                       Foreground="Wheat"
+                                       Margin="40,0,0,0"
+                                       />
+                                <Label Grid.Row="2"
+                                       Name="lblventa2"
+                                       FontSize="16"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       Content="Venta1"
+                                       Foreground="Wheat"
+                                       Margin="40,0,0,0"
+                                       />
+                                <Label Grid.Row="3"
+                                       Name="lblventa3"
+                                       FontSize="16"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       Content="Venta1"
+                                       Foreground="Wheat"
+                                       Margin="40,0,0,0"
+                                       />
+                            </Grid>
+
+                            <Grid Grid.Row="5" Background="#A25C1E" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0"
+                                           Text="Ultimos Lotes Realizadas:"
+                                           Foreground="Wheat"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Center"
+                                           FontSize="18"
+                                           />
+                                <Label Grid.Row="1"
+                                       Name="lbllote1"
+                                       FontSize="16"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       Content="Lote"
+                                       Foreground="Wheat"
+                                       Margin="40,0,0,0"
+                                       />
+                                <Label Grid.Row="2"
+                                       Name="lbllote2"
+                                       FontSize="16"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       Content="Lote"
+                                       Foreground="Wheat"
+                                       Margin="40,0,0,0"
+                                       />
+                                <Label Grid.Row="3"
+                                       Name="lbllote3"
+                                       FontSize="16"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       Content="Lote"
+                                       Foreground="Wheat"
+                                       Margin="40,0,0,0"
+                                       />
+                            </Grid>
+
+
+                            <Grid Grid.Row="7" Background="#A25C1E" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0"
+                                           Text="Ultimos Productos Añadidos:"
+                                           Foreground="Wheat"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Center"
+                                           FontSize="18"
+                                           />
+                                <Label Grid.Row="1"
+                                       Name="lblprod1"
+                                       FontSize="16"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       Content="Producto"
+                                       Foreground="Wheat"
+                                       Margin="40,0,0,0"
+                                       />
+                                <Label Grid.Row="2"
+                                       Name="lblprod2"
+                                       FontSize="16"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       Content="Producto"
+                                       Foreground="Wheat"
+                                       Margin="40,0,0,0"
+                                       />
+                                <Label Grid.Row="3"
+                                       Name="lblprod3"
+                                       FontSize="16"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       Content="Producto"
+                                       Foreground="Wheat"
+                                       Margin="40,0,0,0"
+                                       />
+                            </Grid>
+
+                        </Grid>
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+    </Border>
+
+</Page>

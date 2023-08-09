@@ -1,0 +1,17 @@
+Fecha: 20/07/2023
+RUC: 4576767
+Nombre: Diego Troche
+Dirección: Capiata
+Teléfono: 456456
+Factura Número: 46
+------------------------------
+Detalles de la Venta:
+IdEstilo | Cantidad | Precio Unitario | Valor | Estilo | Detalles
+------------------------------
+23 | 3 | 20000 | 60000 | American IPA | Botellas 500ml
+24 | 3 | 20000 | 60000 | Saison | Botellas 500ml
+Total IVA: 10910
+Monto Total: 120000
+------------------------------
+Total IVA Total: 10910
+Monto Total Total: 120000

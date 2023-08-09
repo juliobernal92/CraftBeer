@@ -1,0 +1,17 @@
+CraftBeer Manager - Factura
+------------------------------
+Fecha: 20/07/2023
+RUC: 454589
+Nombre: Paz Martinez
+Dirección: Asunción
+Teléfono: 435345
+Factura Número: 52
+------------------------------
+Detalles de la Venta:
+IdEstilo | Cantidad | Precio Unitario | Valor | Estilo | Detalles
+------------------------------
+23 | 2 | 20000 | 40000 | American IPA | Botellas 500ml
+24 | 1 | 20000 | 20000 | Saison | Botellas 500ml
+------------------------------
+Total IVA Total: 5455
+Monto Total Total: 60000

@@ -1,0 +1,199 @@
+﻿<Page x:Class="CraftBeer.Paginas.pageLote"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CraftBeer.Paginas"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1100"
+      Title="pageLote"
+      
+      >
+    <Border >
+        <Border>
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#E59E2B" Offset="0"/>
+                    <GradientStop Color="#A25C1E" Offset="0.75"/>
+                    <GradientStop Color="#E59E2B" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+                    <GradientStop Color="#F2D5A0" Offset="0"/>
+                    <GradientStop Color="#D4A768" Offset="1.5"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="20"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="20"/>
+                                <RowDefinition Height="250"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                            </Grid.RowDefinitions>
+                            <!--Mis Lotes-->
+                            <TextBlock Grid.Row="1" Text="Mis Lotes" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <Grid Grid.Row="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="ID Lote" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBox Grid.Column="1" Style="{StaticResource TextBoxStyle1}" x:Name="txtidlote" IsReadOnly="True" Background="Transparent" VerticalContentAlignment="Center"/>
+                                <TextBlock Grid.Column="2" Text="Maestro Cervecero: " FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBox Grid.Column="3" Style="{StaticResource TextBoxStyle1}" x:Name="txtcervecero" TextAlignment="Center" VerticalContentAlignment="Center"/>
+                            </Grid>
+
+                            <Grid Grid.Row="4">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="Estilo" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <ComboBox Grid.Column="1" x:Name="cbestilo" VerticalContentAlignment="Center" Style="{StaticResource ComboBoxStyle1}"/>
+                                <TextBlock Grid.Column="2" Text="Fecha Inicio: " FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBox Grid.Column="3" x:Name="txtfechainicio" Style="{StaticResource TextBoxStyle1}" IsReadOnly="True" TextAlignment="Center" VerticalContentAlignment="Center"/>
+                            </Grid>
+
+                            <Grid Grid.Row="6">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="Densidad Inicial" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBox Grid.Column="1" x:Name="txtDI" Style="{StaticResource TextBoxStyle1}"  VerticalContentAlignment="Center" TextAlignment="Center"/>
+                                <TextBlock Grid.Column="2" Text="Estado: " FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <ComboBox Grid.Column="3" x:Name="cbEstado" VerticalContentAlignment="Center" Style="{StaticResource ComboBoxStyle1}">
+                                    <ComboBoxItem Content="En Proceso" />
+                                    <ComboBoxItem Content="Fermentando" />
+                                    <ComboBoxItem Content="Finalizado" />
+                                </ComboBox>
+
+                            </Grid>
+
+                            <Grid Grid.Row="8">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="Densidad Final" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBox Grid.Column="1" x:Name="txtDF" Style="{StaticResource TextBoxStyle1}" VerticalContentAlignment="Center" TextAlignment="Center"/>
+                                <TextBlock Grid.Column="2" Text="Fecha Fin: " FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBox Grid.Column="3" x:Name="txtFechaFin" Style="{StaticResource TextBoxStyle1}" TextAlignment="Center" VerticalContentAlignment="Center"/>
+
+                            </Grid>
+                            <Grid Grid.Row="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Litros Finales: " FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBox Grid.Column="1" x:Name="txtlitrosfinal" Style="{StaticResource TextBoxStyle1}" VerticalContentAlignment="Center" TextAlignment="Center"/>
+
+                            </Grid>
+
+                            <Grid Grid.Row="12">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="1" Content="Añadir" x:Name="btnAñadir" Click="btnAñadir_Click" Style="{StaticResource ButtonStyleNew}"></Button>
+                                <Button Grid.Column="3" Content="Limpiar" x:Name="btnLimpiar" Click="btnLimpiar_Click" Style="{StaticResource ButtonStyleNew}"></Button>
+                                <Button Grid.Column="5" Content="Exportar PDF" x:Name="btnExportar" Click="btnExportar_Click" Style="{StaticResource ButtonStyleNew}"></Button>
+
+                            </Grid>
+
+                            <DataGrid Grid.Row="14" x:Name="dgMisLotes" IsReadOnly="True" AutoGenerateColumns="False" FontSize="16" 
+                                      Style="{DynamicResource DataGridStyle1}" RowBackground="#D4A768"
+                                              AlternatingRowBackground="#E59E2B"
+                                              Background="Transparent"
+                                              BorderBrush="Transparent">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Lote  " Binding="{Binding IdLote}"/>
+                                    <DataGridTextColumn Header="Maestro   " Binding="{Binding Maestro}"/>
+                                    <DataGridTextColumn Header="Estilo   " Binding="{Binding Estilo}"/>
+                                    <DataGridTextColumn Header="Fecha Inicio   " Binding="{Binding FechaInicio, StringFormat=\{0:dd/MM/yyyy\}}"/>
+                                    <DataGridTextColumn Header="DI   " Binding="{Binding DensidadInicial}"/>
+                                    <DataGridTextColumn Header="Estado   " Binding="{Binding Estado}"/>
+                                    <DataGridTextColumn Header="DF   " Binding="{Binding DensidadFinal}"/>
+                                    <DataGridTextColumn Header="Fecha Fin   " Binding="{Binding FechaFin, StringFormat=\{0:dd/MM/yyyy\}}"/>
+                                    <DataGridTextColumn Header="ABV   " Binding="{Binding ABV, StringFormat={}{0} %}"/>
+                                    <DataGridTextColumn Header="Litros Fin" Binding="{Binding LitrosFinales}"/>
+
+                                    <DataGridTemplateColumn>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Button x:Name="btnEditarDataGrid" 
+                                                        Content="Editar"
+                                                        Tag="{Binding IdLote}"
+                                                        CommandParameter="{Binding IdLote}" 
+                                                        Click="btnEditarDataGrid_Click"
+                                                        Background="#A25C1E"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTemplateColumn>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Button x:Name="btnEliminarDataGrid" 
+                                                        Content="Eliminar" 
+                                                        Tag="{Binding IdLote}"
+                                                        CommandParameter="{Binding IdLote}" 
+                                                        Click="btnEliminarDataGrid_Click"
+                                                        Background="#A25C1E"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                </DataGrid.Columns>
+
+
+                            </DataGrid>
+
+                        </Grid>
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+    </Border>
+
+</Page>

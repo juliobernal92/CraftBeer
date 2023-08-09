@@ -1,0 +1,296 @@
+﻿<Window x:Class="CraftBeer.Vistas.Dashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        xmlns:local="clr-namespace:CraftBeer.Vistas"
+        mc:Ignorable="d"
+        Title="CraftBeer Manager" 
+        Height="700" Width="1300"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        Icon="/Recursos/CraftBeerIcon.ico"
+        >
+
+    <Border CornerRadius="20">
+        <Border CornerRadius="10"                    
+                    BorderThickness="2">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#E59E2B" Offset="0"/>
+                    <GradientStop Color="#A25C1E" Offset="0.75"/>
+                    <GradientStop Color="#E59E2B" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+                    <GradientStop Color="#F2D5A0" Offset="0"/>
+                    <GradientStop Color="#D4A768" Offset="1.5"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <!--Barra de Titulo-->
+                <Border>
+                    <Grid Grid.Row="0" x:Name="gridbarra" PreviewMouseLeftButtonDown="gridbarra_PreviewMouseLeftButtonDown">
+                        <Border CornerRadius="10,10,0,0">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0,0"
+                                             EndPoint="1,0.7">
+                                    <GradientStop Color="#A27C1E"/>
+                                    <GradientStop Color="#D4A768"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                        </Border>
+                        <TextBlock Grid.Row="0"
+                                   Text="CraftBeer Manager"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontSize="18"
+                                   FontWeight="Bold"
+                                   Foreground="Black"
+                                   />
+                        <StackPanel 
+                                x:Name="pnlControlBar"
+                                Grid.Row="0"
+                                Orientation="Horizontal"
+                                FlowDirection="RightToLeft"
+                                Background="Transparent"
+                                Margin="0,0,5,0"
+                                MouseEnter="pnlControlBar_MouseEnter"
+                            >
+                            <Button x:Name="btnClose"
+                                Style="{StaticResource controlButton}"
+                                Tag="#FB539B"
+                                Click="btnClose_Click">
+                                <fa:IconImage Icon="Xmark" Style="{StaticResource controlButtonIcon}"/>
+                            </Button>
+                            <Button x:Name="btnMaximize"
+                                Style="{StaticResource controlButton}"
+                                Tag="#FFC047"
+                                Click="btnMaximize_Click">
+                                <fa:IconImage Icon="Square" Style="{StaticResource controlButtonIcon}"/>
+                            </Button>
+                            <Button x:Name="btnMinimize"
+                                Style="{StaticResource controlButton}"
+                                Tag="#78A3FC"
+                                Click="btnMinimize_Click">
+                                <fa:IconImage Icon="WindowMinimize" Width="12" Style="{StaticResource controlButtonIcon}"/>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <!--Cuerpo-->
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <!--Menu-->
+
+                    <Grid Grid.Column="0">
+                        <Border CornerRadius="0,0,0,10">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0,0"
+                                             EndPoint="1,0.7">
+                                    <GradientStop Color="#A27C1E"/>
+                                    <GradientStop Color="#D4A768"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+
+                            <Grid Grid.Column="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60"/>
+                                    <RowDefinition Height="60"/>
+                                    <RowDefinition Height="60"/>
+                                    <RowDefinition Height="60"/>
+                                    <RowDefinition Height="60"/>
+                                    <RowDefinition Height="60"/>
+                                    <RowDefinition Height="60"/>
+                                    <RowDefinition Height="60"/>
+                                    <RowDefinition Height="60"/>
+                                    <RowDefinition Height="60"/>
+                                    <RowDefinition Height="60"/>
+                                </Grid.RowDefinitions>
+                                <!--BOTONES-->
+                                <!--Boton Dashboard-->
+                                <Button Grid.Row="0"
+                                    Height="60"
+                                    Width="200"
+                                    Style="{StaticResource menuButton}"
+                                    Tag="#E285DE"
+                                    Command="{Binding ShowHomeViewCommand}"
+                                    x:Name="btnDashboard"
+                                    Click="btnDashboard_Click"
+                                    >
+                                    <StackPanel Orientation="Horizontal">
+                                        <fa:IconImage Icon="Home" Style="{StaticResource menuButtonIcon}"/>
+                                        <TextBlock Text="Dashboard" Style="{StaticResource menuButtonText}"/>
+                                    </StackPanel>
+
+                                </Button>
+
+                                <!--Boton Stock Insumos    -->
+                                <Button Grid.Row="1"
+                                        Height="60"
+                                        Width="200"
+                                        Style="{StaticResource menuButton}"
+                                        Tag="#E285DE"
+                                        Command="{Binding ShowHomeViewCommand}"
+                                        x:Name="stockInsumos"
+                                        Click="stockInsumos_Click"
+                                        >
+                                    <StackPanel Orientation="Horizontal">
+                                        <fa:IconImage Icon="WheatAlt" Style="{StaticResource menuButtonIcon}"/>
+                                        <TextBlock Text="Stock Insumos" Style="{StaticResource menuButtonText}"/>
+                                    </StackPanel>
+
+                                </Button>
+
+                                <!--Boton Receta-->
+                                <Button Grid.Row="2"
+                                        Height="60"
+                                        Width="200"
+                                        Style="{StaticResource menuButton}"
+                                        Tag="#E285DE"
+                                        Command="{Binding ShowHomeViewCommand}"
+                                        x:Name="btnReceta"
+                                        Click="btnReceta_Click"
+                                        >
+                                    <StackPanel Orientation="Horizontal">
+                                        <fa:IconImage Icon="ClipboardList" Style="{StaticResource menuButtonIcon}"/>
+                                        <TextBlock Text="Recetas" Style="{StaticResource menuButtonText}"/>
+                                    </StackPanel>
+
+                                </Button>
+
+
+                                <!--Boton Lote-->
+
+                                <Button Grid.Row="3"
+                                    Height="60"
+                                    Width="200"
+                                    Style="{StaticResource menuButton}"
+                                    Tag="#E285DE"
+                                    Command="{Binding ShowHomeViewCommand}"
+                                    x:Name="btnLote"
+                                    Click="btnLote_Click"
+                                    >
+                                    <StackPanel Orientation="Horizontal">
+                                        <fa:IconImage Icon="Beer" Style="{StaticResource menuButtonIcon}"/>
+                                        <TextBlock Text="Lotes" Style="{StaticResource menuButtonText}"/>
+                                    </StackPanel>
+
+                                </Button>
+
+
+
+                                <!--boton inventario producto-->
+                                <Button Grid.Row="4"
+                                        Height="60"
+                                        Width="200"
+                                        Style="{StaticResource menuButton}"
+                                        Tag="#E285DE"
+                                        Command="{Binding ShowHomeViewCommand}"
+                                        x:Name="btnInventarioProducto"
+                                        Click="btnInventarioProducto_Click"
+                                        >
+                                    <StackPanel Orientation="Horizontal">
+                                        <fa:IconImage Icon="Warehouse" Style="{StaticResource menuButtonIcon}"/>
+                                        <TextBlock Text="Stock Producto" Style="{StaticResource menuButtonText}"/>
+                                    </StackPanel>
+
+                                </Button>
+
+                                <!--Boton Ventas-->
+
+                                <Button Grid.Row="5"
+                                        Height="60"
+                                        Width="200"
+                                        Style="{StaticResource menuButton}"
+                                        Tag="#E285DE"
+                                        Command="{Binding ShowHomeViewCommand}"
+                                        x:Name="btnVentas"
+                                        Click="btnVentas_Click"
+                                        >
+                                    <StackPanel Orientation="Horizontal">
+                                        <fa:IconImage Icon="MoneyBill" Style="{StaticResource menuButtonIcon}"/>
+                                        <TextBlock Text="Ventas" Style="{StaticResource menuButtonText}"/>
+                                    </StackPanel>
+
+                                </Button>
+
+                                
+
+                                <!--Boton Configuracion-->
+                                <Button Grid.Row="6"
+                                        Height="60"
+                                        Width="200"
+                                        Style="{StaticResource menuButton}"
+                                        Tag="#E285DE"
+                                        Command="{Binding ShowHomeViewCommand}"
+                                        x:Name="btnConfig"
+                                        Click="btnConfig_Click"
+                                        >
+                                    <StackPanel Orientation="Horizontal">
+                                        <fa:IconImage Icon="Gears" Style="{StaticResource menuButtonIcon}"/>
+                                        <TextBlock Text="Configuración" Style="{StaticResource menuButtonText}"/>
+                                    </StackPanel>
+
+
+                                </Button>
+
+
+                                <!--Boton Cerrar Sesion-->
+                                <Button Grid.Row="7"
+                                        Height="60"
+                                        Width="200"
+                                        Style="{StaticResource menuButton}"
+                                        Tag="#E285DE"
+                                        Command="{Binding ShowHomeViewCommand}"
+                                        x:Name="btnCerrarSesion"
+                                        Click="btnCerrarSesion_Click"
+                                        >
+                                    <StackPanel Orientation="Horizontal">
+                                        <fa:IconImage Icon="RightFromBracket" Style="{StaticResource menuButtonIcon}"/>
+                                        <TextBlock Text="Cerrar Sesión" Style="{StaticResource menuButtonText}"/>
+                                    </StackPanel>
+                                </Button>
+
+                                <TextBox Grid.Row="8" x:Name="txtid" Width="60" Height="30" FontSize="14" Background="Transparent" BorderBrush="Transparent" Foreground="Transparent" IsReadOnly="True" Focusable="False"/>
+
+                            </Grid>
+
+
+                        </Border>
+                    </Grid>
+                    <!--FRAME-->
+
+
+                    <Frame Grid.Column="1"
+                           x:Name="framePrincipal"
+                           Width="Auto"
+                           Height="Auto"
+                           NavigationUIVisibility="Hidden"
+                           >
+
+                    </Frame>
+
+                </Grid>
+
+
+            </Grid>
+
+
+        </Border>
+    </Border>
+</Window>

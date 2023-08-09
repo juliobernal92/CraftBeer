@@ -1,0 +1,331 @@
+﻿<Page x:Class="CraftBeer.Paginas.pageAñadirReceta"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CraftBeer.Paginas"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1100"
+      Title="Recetas">
+    <Border >
+        <Border>
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#E59E2B" Offset="0"/>
+                    <GradientStop Color="#A25C1E" Offset="0.75"/>
+                    <GradientStop Color="#E59E2B" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+                    <GradientStop Color="#F2D5A0" Offset="0"/>
+                    <GradientStop Color="#D4A768" Offset="1.5"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+                            <!--AÑADIR RECETA-->
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="300"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                </Grid.RowDefinitions>
+                                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBlock Text="Añadir Receta"
+                                               FontSize="16"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                           />
+                                </StackPanel>
+                                <StackPanel  Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBox x:Name="txtidreceta"
+                                             Width="60" Height="30"
+                                             IsReadOnly="True"
+                                             Background="Transparent"
+                                             Margin="0,0,10,0"
+                                             Style="{StaticResource TextBoxStyle1}"
+                                             />
+                                    <TextBlock Text="Estilo"
+                                               FontSize="16"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               Margin="0,0,10,0"
+                                               />
+                                    <TextBox x:Name="txtestilo"
+                                             Width="140" Height="30"
+                                             Margin="0,0,10,0"
+                                             Style="{StaticResource TextBoxStyle1}"
+                                             />
+                                </StackPanel>
+
+                                <StackPanel  Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBlock Text="Litros"
+                                               FontSize="16"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               Margin="0,0,10,0"
+                                               />
+                                    <TextBox x:Name="txtlitros"
+                                             Width="140" Height="30"
+                                             Margin="0,0,10,0"
+                                             Style="{StaticResource TextBoxStyle1}"
+                                             />
+                                    <Button Content="Añadir"
+                                            Width="100" Height="30"
+                                            FontSize="16"
+                                            Margin="0,0,10,0"
+                                            x:Name="btnañadir"
+                                            Click="btnañadir_Click"
+                                            Style="{StaticResource ButtonStyleNew}"
+                                            />
+                                </StackPanel>
+                                <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button Content="Limpiar"
+                                            Width="100" Height="30"
+                                            FontSize="16"
+                                            Margin="0,0,10,0"
+                                            x:Name="btnlimpiar"
+                                            Click="btnlimpiar_Click"
+                                            Style="{StaticResource ButtonStyleNew}"
+                                            />
+                                </StackPanel>
+                                <StackPanel Grid.Row="7">
+                                    <DataGrid Width="380" Height="300"
+                                              AutoGenerateColumns="False"
+                                              IsReadOnly="True"
+                                              x:Name="dgreceta"
+                                              Style="{DynamicResource DataGridStyle1}" 
+                                              RowBackground="#D4A768"
+                                              AlternatingRowBackground="#E59E2B"
+                                              Background="Transparent"
+                                              BorderBrush="Transparent"
+                                              >
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="ID Receta " Binding="{Binding IdReceta}"/>
+                                            <DataGridTextColumn Header="Estilo " Binding="{Binding Estilo}"/>
+                                            <DataGridTextColumn Header="Litros " Binding="{Binding Litros}"/>
+
+
+                                            <DataGridTemplateColumn>
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <Button x:Name="btnEditarReceta" 
+                                                        Content="Editar"
+                                                        Tag="{Binding IdReceta}"
+                                                        CommandParameter="{Binding IdReceta}" 
+                                                        Click="btnEditarReceta_Click"
+                                                                Background="#A25C1E"/>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+
+                                            <DataGridTemplateColumn>
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <Button x:Name="btnEliminarReceta" 
+                                                        Content="Eliminar" 
+                                                        Tag="{Binding IdReceta}"
+                                                        CommandParameter="{Binding IdReceta}" 
+                                                        Click="btnEliminarReceta_Click"
+                                                                Background="#A25C1E"/>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+
+                                        </DataGrid.Columns>
+
+                                    </DataGrid>
+                                </StackPanel>
+
+                            </Grid>
+                            <!--AÑADIR INSUMOS-->
+                            <Grid Grid.Column="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="300"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                </Grid.RowDefinitions>
+                                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBlock Text="Seleccionar Receta"
+                                               FontSize="16"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               Margin="0,0,10,0"
+                                               />
+                                </StackPanel>
+
+                                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBox x:Name="txtidrecetainsumo"
+                                             Width="60" Height="30"
+                                             IsReadOnly="True"
+                                             Background="Transparent"
+                                             Margin="0,0,10,0"
+                                             Style="{StaticResource TextBoxStyle1}"
+                                             />
+                                    <TextBlock Text="Receta"
+                                               FontSize="16"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               Margin="0,0,10,0"
+                                               />
+                                    <ComboBox Width="140" Height="30"
+                                              Margin="0,0,10,0"
+                                              x:Name="cbrecetas"
+                                              Style="{StaticResource ComboBoxStyle1}"
+                                              />
+                                    <Button Content="Seleccionar"
+                                            Width="100" Height="30"
+                                            FontSize="16"
+                                            Margin="0,0,10,0"
+                                            x:Name="btnseleccionar"
+                                            Click="btnseleccionar_Click"
+                                            Style="{StaticResource ButtonStyleNew}"
+                                            />
+                                </StackPanel>
+                                <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBlock Text="Añadir Insumos a la Receta"
+                                               FontSize="16"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               />
+                                </StackPanel>
+
+                                <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center" Background="Transparent">
+                                    <TextBlock Text="Tipo"
+                                               FontSize="16"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               Margin="0,0,10,0"
+                                               />
+                                    <ComboBox Width="140" Height="30"
+                                              Margin="0,0,10,0"
+                                              x:Name="cbtipoinsumo"
+                                              SelectionChanged="cbtipoinsumo_SelectionChanged"
+                                              Style="{StaticResource ComboBoxStyle1}"
+                                              />
+                                    <TextBlock Text="Nombre"
+                                               FontSize="16"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               Margin="0,0,10,0"
+                                               />
+                                    <ComboBox Width="140" Height="30"
+                                              Margin="0,0,10,0"
+                                              x:Name="cbnombreinsumo"
+                                              Style="{StaticResource ComboBoxStyle1}"
+                                              >
+                                    </ComboBox>
+                                </StackPanel>
+                                <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBlock Text="Cantidad"
+                                               FontSize="16"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               Margin="0,0,10,0"
+                                               />
+                                    <TextBox x:Name="txtcantidad"
+                                             Width="60" Height="30"
+                                             Margin="0,0,10,0"
+                                             Style="{StaticResource TextBoxStyle1}"
+                                             />
+                                    <Button Content="Añadir"
+                                            Width="100" Height="30"
+                                            FontSize="16"
+                                            Margin="0,0,10,0"
+                                            x:Name="btnañadirinsumo"
+                                            Click="btnañadirinsumo_Click"
+                                            Style="{StaticResource ButtonStyleNew}"
+                                            />
+                                </StackPanel>
+                                <StackPanel Grid.Row="7">
+                                    <DataGrid Width="456" Height="300"
+                                              AutoGenerateColumns="False"
+                                              IsReadOnly="True"
+                                              x:Name="dgrecetainsumo"
+                                              Style="{DynamicResource DataGridStyle1}" 
+                                              RowBackground="#D4A768"
+                                              AlternatingRowBackground="#E59E2B"
+                                              Background="Transparent"
+                                              BorderBrush="Transparent"
+                                              >
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="ID" Binding="{Binding IdRecetaInsumo}" />
+                                            <DataGridTextColumn Header="Tipo  " Binding="{Binding TipoInsumo}" />
+                                            <DataGridTextColumn Header="Nombre  " Binding="{Binding Nombre}" />
+                                            <DataGridTextColumn Header="Cantidad " Binding="{Binding Kilos}" />
+                                            <DataGridTextColumn Header="Id Insumo " Binding="{Binding IdInsumo}" />
+                                        
+                                        <DataGridTemplateColumn>
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <Button x:Name="btnEditarRecetaInsumo" 
+                                                        Content="Editar"
+                                                        Tag="{Binding IdRecetaInsumo}"
+                                                        CommandParameter="{Binding IdRecetaInsumo}" 
+                                                        Click="btnEditarRecetaInsumo_Click"
+                                                                Background="#A25C1E"/>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+
+                                            <DataGridTemplateColumn>
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <Button x:Name="btnEliminarRecetaInsumo" 
+                                                        Content="Eliminar" 
+                                                        Tag="{Binding IdRecetaInsumo}"
+                                                        CommandParameter="{Binding IdRecetaInsumo}" 
+                                                        Click="btnEliminarRecetaInsumo_Click"
+                                                                Background="#A25C1E"/>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+
+                                        </DataGrid.Columns>
+                                        
+                                    </DataGrid>
+                                </StackPanel>
+
+
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+    </Border>
+
+</Page>

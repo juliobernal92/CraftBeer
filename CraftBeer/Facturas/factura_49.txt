@@ -1,0 +1,18 @@
+CraftBeer Manager - Factura
+------------------------------
+Fecha: 20/07/2023
+RUC: 564556
+Nombre: Christian
+Dirección: Kelly
+Teléfono: 45645
+Factura Número: 49
+------------------------------
+Detalles de la Venta:
+IdEstilo | Cantidad | Precio Unitario | Valor | Estilo | Detalles
+------------------------------
+23 | 3 | 20000 | 60000 | American IPA | Botellas 500ml
+24 | 3 | 20000 | 60000 | Saison | Botellas 500ml
+25 | 3 | 20000 | 60000 | Weissbier | Botellas 500ml
+------------------------------
+Total IVA Total: 16364
+Monto Total Total: 180000

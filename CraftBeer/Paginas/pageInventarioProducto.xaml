@@ -1,0 +1,172 @@
+﻿<Page x:Class="CraftBeer.Paginas.pageInventarioProducto"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CraftBeer.Paginas"
+      mc:Ignorable="d" 
+     d:DesignHeight="800" d:DesignWidth="1100"
+      Title="pageInventarioProducto">
+    <Border >
+        <Border>
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#E59E2B" Offset="0"/>
+                    <GradientStop Color="#A25C1E" Offset="0.75"/>
+                    <GradientStop Color="#E59E2B" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+                    <GradientStop Color="#F2D5A0" Offset="0"/>
+                    <GradientStop Color="#D4A768" Offset="1.5"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="150"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="20"/>
+                                <RowDefinition Height="250"/>
+                                <RowDefinition Height="40"/>
+                            </Grid.RowDefinitions>
+                            <!--Stock Producto-->
+                            <TextBlock Grid.Row="1" Text="Stock Productos" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <Grid Grid.Row="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="65"/>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="150"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="1" Text="ID Stock" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Height="22" Width="58"/>
+                                <TextBox Grid.Column="2" x:Name="txtidStock" IsReadOnly="True" Background="Transparent" VerticalContentAlignment="Center" Margin="0,2,0,2"/>
+                                <TextBlock Grid.Column="3" Text="Estilos Disponibles: " FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Height="22" Width="138"/>
+                                <ComboBox Grid.Column="4" x:Name="cbestilos" VerticalContentAlignment="Center" Margin="0,2,0,2" SelectionChanged="cbestilos_SelectionChanged" >
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock>
+                                                <Run Text="Numero Lote: "/>
+                                                <Run Text="{Binding IdLote}" />
+                                                <Run Text=" - " />
+                                                <Run Text="Estilo: "/>
+                                                <Run Text="{Binding Estilo}" />
+                                            </TextBlock>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+
+                            </Grid>
+
+                            <Grid Grid.Row="3">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="145"/>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBox Grid.Column="1" Height="35" x:Name="txtidlote" IsReadOnly="True" Background="Transparent" VerticalContentAlignment="Center" TextAlignment="Center"/>
+                                <TextBlock Grid.Column="2" Text="Litros Disponibles: " FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBox Grid.Column="3" Height="35" x:Name="txtlitrosdisponibles" Background="Transparent" IsReadOnly="True" VerticalContentAlignment="Center" TextAlignment="Center" Margin="0,0,114,0" />
+                            </Grid>
+                            <Grid Grid.Row="4">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="1" Text="Presentación" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <RadioButton x:Name="rdbtnBotellas" Grid.Column="2" Checked="rdbtnBotellas_Checked" VerticalAlignment="Center" Content="Botellas" FontSize="16" HorizontalAlignment="Center" />
+                                <RadioButton x:Name="rdbtnBarriles" Grid.Column="3" Checked="rdbtnBarriles_Checked" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Barriles" FontSize="16"/>
+                            </Grid>
+                            <Grid Grid.Row="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="120"/>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="90"/>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="1" x:Name="lblreferenciabotellas"/>
+                                <TextBlock Grid.Column="2" Text="Litros en Barril: " FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBox Grid.Column="3" Height="35" x:Name="txtlitrosbarril" VerticalContentAlignment="Center" TextAlignment="Center"/>
+                                <TextBlock Grid.Column="4" Text="Cantidad: " FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBox Grid.Column="5" Height="35" x:Name="txtcantidad" VerticalContentAlignment="Center" TextAlignment="Center"/>
+
+                            </Grid>
+
+
+
+                            <Grid Grid.Row="6">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="1" Content="Añadir" x:Name="btnAñadir" Click="btnAñadir_Click"></Button>
+                                <Button Grid.Column="3" Content="Exportar PDF" x:Name="btnExportar" Click="btnExportar_Click"></Button>
+
+                            </Grid>
+
+                            <DataGrid Grid.Row="8" x:Name="dgStock" AutoGenerateColumns="False" 
+                                      IsReadOnly="True" Style="{DynamicResource DataGridStyle1}" 
+                                      RowBackground="#D4A768"
+                                              AlternatingRowBackground="#E59E2B"
+                                              Background="Transparent"
+                                              BorderBrush="Transparent"
+                                      >
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="ID Stock" Binding="{Binding IdEstilo}"/>
+                                    <DataGridTextColumn Header="Estilo" Binding="{Binding Estilo}"/>
+                                    <DataGridTextColumn Header="Cantidad" Binding="{Binding Cantidad}"/>
+
+
+
+                                    <DataGridTemplateColumn>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Button x:Name="btnEliminarStock" 
+                                                Content="Eliminar" 
+                                                Tag="{Binding IdEstilo}"
+                                                CommandParameter="{Binding IdEstilo}" 
+                                                Click="btnEliminarStock_Click"
+                                                        Background="#A25C1E"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                </DataGrid.Columns>
+                            </DataGrid>
+
+                        </Grid>
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+    </Border>
+
+</Page>

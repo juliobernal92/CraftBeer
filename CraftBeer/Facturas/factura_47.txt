@@ -1,0 +1,16 @@
+Fecha: 20/07/2023
+RUC: 54657656
+Nombre: Giovanni Marecos
+Dirección: San Lorenzo
+Teléfono: 8676
+Factura Número: 47
+------------------------------
+Detalles de la Venta:
+IdEstilo | Cantidad | Precio Unitario | Valor | Estilo | Detalles
+------------------------------
+24 | 3 | 20000 | 60000 | Saison | Botellas 500ml
+25 | 3 | 20000 | 60000 | Weissbier | Botellas 500ml
+23 | 3 | 20000 | 60000 | American IPA | Botellas 500ml
+------------------------------
+Total IVA Total: 16364
+Monto Total Total: 180000

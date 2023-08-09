@@ -1,0 +1,177 @@
+﻿<Window x:Class="CraftBeer.Vistas.frmLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        xmlns:local="clr-namespace:CraftBeer.Vistas"
+        mc:Ignorable="d"
+        Title="CraftBeer Manager" 
+        Height="360" Width="550"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        Icon="/Recursos/CraftBeerIcon.ico"
+        >
+
+    <Border CornerRadius="20">
+        <Border CornerRadius="10"                    
+                    BorderThickness="2">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#E59E2B" Offset="0"/>
+                    <GradientStop Color="#A25C1E" Offset="0.75"/>
+                    <GradientStop Color="#E59E2B" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+                    <GradientStop Color="#F2D5A0" Offset="0"/>
+                    <GradientStop Color="#D4A768" Offset="1.5"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <!--Barra de Titulo-->
+                <Border>
+                    <Grid Grid.Row="0" x:Name="gridbarra" PreviewMouseLeftButtonDown="gridbarra_PreviewMouseLeftButtonDown">
+                        <Border CornerRadius="10,10,0,0">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0,0"
+                                             EndPoint="1,0.7">
+                                    <GradientStop Color="#A27C1E"/>
+                                    <GradientStop Color="#D4A768"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                        </Border>
+                        <TextBlock Grid.Row="0"
+                                   Text="CraftBeer Manager"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontSize="18"
+                                   FontWeight="Bold"
+                                   Foreground="Black"
+                                   />
+                        <StackPanel 
+                                x:Name="pnlControlBar"
+                                Grid.Row="0"
+                                Orientation="Horizontal"
+                                FlowDirection="RightToLeft"
+                                Background="Transparent"
+                                Margin="0,0,5,0"
+                                MouseEnter="pnlControlBar_MouseEnter"
+                            >
+                            <Button x:Name="btnClose"
+                                Style="{StaticResource controlButton}"
+                                Tag="#FB539B"
+                                Click="btnClose_Click">
+                                <fa:IconImage Icon="Xmark" Style="{StaticResource controlButtonIcon}"/>
+                            </Button>
+                            
+                            <Button x:Name="btnMinimize"
+                                Style="{StaticResource controlButton}"
+                                Tag="#78A3FC"
+                                Click="btnMinimize_Click">
+                                <fa:IconImage Icon="WindowMinimize" Width="12" Style="{StaticResource controlButtonIcon}"/>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="180"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="/Recursos/imagenloginnew.jpg" Grid.Column="0"/>
+                    <Grid Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="100"/>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="20"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Image Source="/Recursos/hop.png" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,20,0"/>
+                            <TextBlock  VerticalAlignment="Center" HorizontalAlignment="Center" Text="CraftBeer Manager" FontSize="22" FontWeight="Bold"/>
+                        </StackPanel>
+                        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Text="Usuario " VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" Margin="25,0,10,0"/>
+                            <TextBox Width="140" Height="30" Margin="0,0,10,0" x:Name="txtuser" FontSize="16" />
+                        </StackPanel>
+                        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Text="Contraseña " VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" Margin="0,0,10,0"/>
+                            <PasswordBox Width="140" Height="30" Margin="0,0,10,0" x:Name="txtpass" FontSize="16" />
+                        </StackPanel>
+                        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button Name="btningresar" Content="Ingresar" FontSize="16" Width="140" Height="30"
+                                    HorizontalAlignment="Center" Grid.Column="1" Grid.Row="3"
+                                    Foreground="Wheat" Background="#A27C1E"
+                                    Click="btningresar_Click"
+                                    >
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Width="140" Height="30"
+                                        CornerRadius="10"
+                                        Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center"
+                                                              HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button Name="CrearCuenta" 
+                                    Grid.Row="4" 
+                                    Grid.Column="1"
+                                    Width="200" Height="33"
+                                    FontSize="16"
+                                    Foreground="#A27C1E"
+                                    Background="Transparent"
+                                    BorderBrush="Transparent"
+                                    Content="Crear Cuenta"
+                                    Click="CrearCuenta_Click"
+                                    >
+
+                            </Button>
+                            
+                        </StackPanel>
+                        <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button x:Name="RecuperarContraseña" Grid.Row="5" Grid.Column="1"
+                                    Width="200" Height="33"
+                                    FontSize="16"
+                                    Foreground="#A27C1E"
+                                    Background="Transparent"
+                                    BorderBrush="Transparent"
+                                    Content="Recuperar Contraseña"
+                                    Click="RecuperarContraseña_Click"
+                                    >
+
+                            </Button>
+                        </StackPanel>
+                        
+                    </Grid>
+                </Grid>
+                
+
+
+            </Grid>
+
+            
+
+            
+
+        </Border>
+    </Border>
+</Window>

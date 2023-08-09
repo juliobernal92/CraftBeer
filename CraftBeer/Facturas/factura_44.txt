@@ -1,0 +1,40 @@
+Fecha: 20/07/2023
+RUC: 3464556
+Nombre: Carlos Valenzuela
+Dirección: San Lorenzo
+Teléfono: 23452345
+Factura Número: 44
+------------------------------
+Detalles de la Venta:
+IdEstilo | Cantidad | Precio Unitario | Valor | Estilo | Detalles
+------------------------------
+23 | 2 | 20000 | 40000 | American IPA | Botellas 500ml
+24 | 2 | 20000 | 40000 | Saison | Botellas 500ml
+Total IVA: 7273
+Monto Total: 80000
+------------------------------
+23 | 4 | 20000 | 80000 | American IPA | Botellas 500ml
+25 | 2 | 20000 | 40000 | Producto no encontrado | -
+Total IVA: 10910
+Monto Total: 120000
+------------------------------
+24 | 3 | 16000 | 48000 | Saison | Botellas 500ml
+23 | 2 | 16000 | 32000 | American IPA | Botellas 500ml
+Total IVA: 7273
+Monto Total: 80000
+------------------------------
+23 | 3 | 16000 | 48000 | American IPA | Botellas 500ml
+24 | 3 | 16000 | 48000 | Saison | Botellas 500ml
+25 | 3 | 16000 | 48000 | Producto no encontrado | -
+Total IVA: 13091
+Monto Total: 144000
+------------------------------
+25 | 3 | 20000 | 60000 | Producto no encontrado | -
+23 | 3 | 20000 | 60000 | American IPA | Botellas 500ml
+Total IVA: 10910
+Monto Total: 120000
+------------------------------
+23 | 3 | 20000 | 60000 | American IPA | Botellas 500ml
+24 | 3 | 20000 | 60000 | Saison | Botellas 500ml
+Total IVA: 5455
+Monto Total: 60000

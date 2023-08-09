@@ -1,0 +1,227 @@
+﻿<Page x:Class="CraftBeer.Paginas.pageStockInsumos"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CraftBeer.Paginas"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1100"
+      Title="Stock Insumos">
+    <Border >
+        <Border>
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#E59E2B" Offset="0"/>
+                    <GradientStop Color="#A25C1E" Offset="0.75"/>
+                    <GradientStop Color="#E59E2B" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+                    <GradientStop Color="#F2D5A0" Offset="0"/>
+                    <GradientStop Color="#D4A768" Offset="1.5"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="150"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="300"/>
+                                    <RowDefinition Height="10"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="1" Text="Añadir Insumos Disponibles" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+                                <!--fila1-->
+                                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBox Width="60" Height="30" 
+                                             Margin="0,0,10,0"
+                                             IsReadOnly="True"
+                                             Background="Transparent"
+                                             x:Name="txtidinsumo"
+                                             FontSize="16"
+                                             VerticalContentAlignment="Center"
+                                             TextAlignment="Center"
+                                             Style="{StaticResource TextBoxStyle1}"
+                                             />
+                                    <TextBlock Text="Tipo de Insumo" 
+                                               FontSize="16"
+                                               Margin="0,0,10,0"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               />
+                                    <ComboBox x:Name="cbtipoinsumo"
+                                              Width="140" Height="30"
+                                              FontSize="16"
+                                              Margin="0,0,10,0"
+                                              Style="{StaticResource ComboBoxStyle1}"
+                                              >
+                                        <ComboBoxItem Content="Malta" />
+                                        <ComboBoxItem Content="Lupulo" />
+                                        <ComboBoxItem Content="Levadura" />
+                                        <ComboBoxItem Content="Clarificante" />
+                                        <ComboBoxItem Content="Nutriente" />
+                                    </ComboBox>
+                                    <TextBlock Text="Nombre"
+                                               FontSize="16"
+                                               Margin="0,0,10,0"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               />
+                                    <TextBox Width="140" Height="30" 
+                                             Margin="0,0,10,0"
+                                             x:Name="txtnombre"
+                                             FontSize="16"
+                                             VerticalContentAlignment="Center"
+                                             TextAlignment="Center"
+                                             Style="{StaticResource TextBoxStyle1}"
+                                             />
+                                </StackPanel>
+                                <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBlock Text="Cantidad"
+                                               FontSize="16"
+                                               Margin="0,0,10,0"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               />
+                                    <TextBox Width="60" Height="30" 
+                                             Margin="0,0,10,0"
+                                             x:Name="txtcantidad"
+                                             FontSize="16"
+                                             VerticalContentAlignment="Center"
+                                             TextAlignment="Center"
+                                             Style="{StaticResource TextBoxStyle1}"
+                                             />
+                                    <TextBlock Text="Costo Unitario"
+                                               FontSize="16"
+                                               Margin="0,0,10,0"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               />
+                                    <TextBox Width="100" Height="30" 
+                                             Margin="0,0,10,0"
+                                             x:Name="txtcostounitario"
+                                             FontSize="16"
+                                             VerticalContentAlignment="Center"
+                                             TextAlignment="Center"
+                                             Style="{StaticResource TextBoxStyle1}"
+                                             />
+                                    <Button Content="Añadir" Width="80"
+                                            Height="30" FontSize="16"
+                                            x:Name="btnañadir"
+                                            Click="btnañadir_Click"
+                                            Margin="0,0,10,0"
+                                            Style="{StaticResource ButtonStyleNew}"
+                                            />
+                                </StackPanel>
+                                <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBlock Text="Buscar por tipo de Insumo"
+                                               FontSize="16"
+                                               Margin="0,0,10,0"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               />
+                                    <ComboBox Width="140" Height="30"
+                                              FontSize="16"
+                                              Margin="0,0,10,0"
+                                              Style="{StaticResource ComboBoxStyle1}"
+                                              >
+                                        <ComboBoxItem Content="Todo" />
+                                        <ComboBoxItem Content="Malta" />
+                                        <ComboBoxItem Content="Lupulo" />
+                                        <ComboBoxItem Content="Levadura" />
+                                        <ComboBoxItem Content="Clarificante" />
+                                        <ComboBoxItem Content="Nutriente" />
+                                    </ComboBox>
+                                    <Button Content="Buscar" Width="80"
+                                            Height="30" FontSize="16"
+                                            x:Name="btnbuscar"
+                                            Click="btnbuscar_Click"
+                                            Margin="0,0,10,0"
+                                            Style="{StaticResource ButtonStyleNew}"
+                                            />
+                                </StackPanel>
+                                <StackPanel Grid.Row="6">
+                                    <DataGrid x:Name="dginsumos" Width="651" Height="300"
+                                              AutoGenerateColumns="False"
+                                              IsReadOnly="True"
+                                              Style="{DynamicResource DataGridStyle1}" 
+                                              RowBackground="#D4A768"
+                                              AlternatingRowBackground="#E59E2B"
+                                              Background="Transparent"
+                                              BorderBrush="Transparent"
+                                              >
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="ID Insumo  " Binding="{Binding IdInsumo}"/>
+                                            <DataGridTextColumn Header="Tipo de Insumo  " Binding="{Binding TipoInsumo}"/>
+                                            <DataGridTextColumn Header="Nombre  " Binding="{Binding Nombre}"/>
+                                            <DataGridTextColumn Header="Cantidad  " Binding="{Binding Kilos,StringFormat={}{0:N0}}"/>
+                                            <DataGridTextColumn Header="Costo Unitario  " Binding="{Binding CostoKilos, StringFormat={}{0:N0}}"/>
+
+
+                                            <DataGridTemplateColumn>
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <Button x:Name="btnEditarInsumo" 
+                                                        Content="Editar"
+                                                        Tag="{Binding IdInsumo}"
+                                                        CommandParameter="{Binding IdInsumo}" 
+                                                        Click="btnEditarInsumo_Click"
+                                                        Background="#A25C1E"
+                                                                />
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+
+                                            <DataGridTemplateColumn>
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <Button x:Name="btnEliminarInsumo" 
+                                                        Content="Eliminar" 
+                                                        Tag="{Binding IdInsumo}"
+                                                        CommandParameter="{Binding IdInsumo}" 
+                                                        Click="btnEliminarInsumo_Click"
+                                                        Background="#A25C1E"/>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+
+                                        </DataGrid.Columns>
+
+                                    </DataGrid>
+                                </StackPanel>
+                                <StackPanel Grid.Row="8">
+                                    <Button Content="Exportar PDF" Width="140"
+                                            Height="30" FontSize="16"
+                                            x:Name="btnexportarpdf"
+                                            Click="btnexportarpdf_Click"
+                                            Margin="0,0,10,0"
+                                            Style="{StaticResource ButtonStyleNew}"
+                                            />
+                                    
+                                </StackPanel>                               
+
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+    </Border>
+
+</Page>

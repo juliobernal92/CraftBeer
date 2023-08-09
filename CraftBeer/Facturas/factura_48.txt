@@ -1,0 +1,18 @@
+CraftBeer Manager - Factura
+------------------------------
+Fecha: 20/07/2023
+RUC: 4534635
+Nombre: Julio Bernal
+Dirección: Asunción
+Teléfono: 97878
+Factura Número: 48
+------------------------------
+Detalles de la Venta:
+IdEstilo | Cantidad | Precio Unitario | Valor | Estilo | Detalles
+------------------------------
+23 | 3 | 20000 | 60000 | American IPA | Botellas 500ml
+24 | 3 | 20000 | 60000 | Saison | Botellas 500ml
+25 | 6 | 20000 | 120000 | Weissbier | Botellas 500ml
+------------------------------
+Total IVA Total: 21819
+Monto Total Total: 240000

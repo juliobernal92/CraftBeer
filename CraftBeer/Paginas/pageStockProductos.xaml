@@ -1,0 +1,135 @@
+﻿<Page x:Class="CraftBeer.Paginas.pageStockProductos"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CraftBeer.Paginas"
+      mc:Ignorable="d" 
+       d:DesignHeight="800" d:DesignWidth="1100"
+      Title="pageInventarioProducto">
+    <Border >
+        <Border>
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#E59E2B" Offset="0"/>
+                    <GradientStop Color="#A25C1E" Offset="0.75"/>
+                    <GradientStop Color="#E59E2B" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+                    <GradientStop Color="#F2D5A0" Offset="0"/>
+                    <GradientStop Color="#D4A768" Offset="1.5"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="150"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="300"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                </Grid.RowDefinitions>
+                                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBlock Text="Agregar Productos Disponibles" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+                                </StackPanel>
+                                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBox Width="60" Height="30" x:Name="txtidstock" Style="{StaticResource TextBoxStyle1}" IsReadOnly="True" Background="Transparent" Margin="0,0,10,0" VerticalContentAlignment="Center" FontSize="16" />
+                                    <TextBlock Text="Estilos Disponibles " FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
+                                    <ComboBox x:Name="cbestilos" FontSize="16" Width="140" Height="30" Margin="0,0,10,0" SelectionChanged="cbestilos_SelectionChanged" Style="{StaticResource ComboBoxStyle1}"/>
+                                    <TextBlock Text="Litros Disponibles " FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
+                                    <TextBox Width="60" Height="30" x:Name="txtlitrosdisp" Style="{StaticResource TextBoxStyle1}" IsReadOnly="True" Background="Transparent" Margin="0,0,10,0" VerticalContentAlignment="Center" FontSize="16" />
+                                    <TextBlock Text="Numero Lote " FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
+                                    <TextBox Width="60" Height="30" x:Name="txtidlote" Style="{StaticResource TextBoxStyle1}" IsReadOnly="True" Background="Transparent" Margin="0,0,10,0" VerticalContentAlignment="Center" FontSize="16" />
+                                </StackPanel>
+                                <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBlock Text="Presentación " FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
+                                    <ComboBox x:Name="cbpresentacion" SelectedValuePath="Content" FontSize="16" Width="140" Height="30" Margin="0,0,10,0" Style="{StaticResource ComboBoxStyle1}" SelectionChanged="cbpresentacion_SelectionChanged">
+                                        <ComboBox.Items>
+                                            <ComboBoxItem Content="Botellas 500ml" />
+                                            <ComboBoxItem Content="Barriles 20L" />
+                                        </ComboBox.Items>
+                                    </ComboBox>
+                                    <TextBlock Text="Cantidad " FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
+                                    <TextBox Width="60" Height="30" x:Name="txtcantidad" Style="{StaticResource TextBoxStyle1}"  Margin="0,0,10,0" VerticalContentAlignment="Center" FontSize="16" />
+                                    
+                                </StackPanel>
+                                <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Label x:Name="lblinformacion" Width="600" Height="30" VerticalContentAlignment="Center" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </StackPanel>
+                                <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button x:Name="btnañadir" Content="Añadir" Width="120" Height="30" FontSize="16" Click="btnañadir_Click" Margin="0,0,10,0" Style="{StaticResource ButtonStyleNew}"/>
+                                    <Button x:Name="btnlimpiar" Content="Limpiar" Width="120" Height="30" FontSize="16" Click="btnlimpiar_Click" Margin="0,0,10,0" Style="{StaticResource ButtonStyleNew}" />
+                                    <Button x:Name="btnexportarPDF" Content="Exportar PDF" Width="120" Height="30" FontSize="16" Click="btnexportarPDF_Click" Margin="0,0,10,0" Style="{StaticResource ButtonStyleNew}" />
+                                </StackPanel>
+                                <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <DataGrid Height="300" Width="700" AutoGenerateColumns="False" IsReadOnly="True" 
+                                              x:Name="dgstockproducto" Style="{StaticResource DataGridStyle1}" 
+                                              RowBackground="#D4A768"
+                                              AlternatingRowBackground="#E59E2B"
+                                              Background="Transparent"
+                                              BorderBrush="Transparent"
+                                              >
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="ID    " Binding="{Binding IdEstilo}"/>
+                                            <DataGridTextColumn Header="Producto     " Binding="{Binding Estilo}"/>
+                                            <DataGridTextColumn Header="Cantidad     " Binding="{Binding Cantidad,StringFormat={}{0:N0}}"/>
+                                            <DataGridTextColumn Header="Descripción     " Binding="{Binding Descripcion}"/>
+
+
+                                            <DataGridTemplateColumn>
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <Button x:Name="btnEditarStock" 
+                                                        Content="Editar"
+                                                        Tag="{Binding IdEstilo}"
+                                                        CommandParameter="{Binding IdEstilo}" 
+                                                        Click="btnEditarStock_Click"
+                                                        Background="#A25C1E"
+                                                                />
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+
+                                            <DataGridTemplateColumn>
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <Button x:Name="btnEliminarStock" 
+                                                        Content="Eliminar" 
+                                                        Tag="{Binding IdEstilo}"
+                                                        CommandParameter="{Binding IdEstilo}" 
+                                                        Click="btnEliminarStock_Click"
+                                                        Background="#A25C1E"/>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </StackPanel>
+                                
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+    </Border>
+
+</Page>

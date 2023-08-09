@@ -1,0 +1,16 @@
+Fecha: 20/07/2023
+RUC: 454589
+Nombre: Paz Martinez
+Dirección: Asunción
+Teléfono: 435345
+Factura Número: 45
+------------------------------
+Detalles de la Venta:
+IdEstilo | Cantidad | Precio Unitario | Valor | Estilo | Detalles
+------------------------------
+23 | 3 | 20000 | 60000 | American IPA | Botellas 500ml
+Total IVA: 5455
+Monto Total: 60000
+------------------------------
+Total IVA Total: 60000
+Monto Total Total: 60000

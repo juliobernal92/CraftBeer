@@ -1,0 +1,97 @@
+﻿<Page x:Class="CraftBeer.Paginas.pageConfiguracion"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CraftBeer.Paginas"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1100"
+      Title="Recetas">
+    <Border >
+        <Border>
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#E59E2B" Offset="0"/>
+                    <GradientStop Color="#A25C1E" Offset="0.75"/>
+                    <GradientStop Color="#E59E2B" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+                    <GradientStop Color="#F2D5A0" Offset="0"/>
+                    <GradientStop Color="#D4A768" Offset="1.5"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="200"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                </Grid.RowDefinitions>
+                                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBlock Text="Actualiza los datos de tu cuenta:" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </StackPanel>
+                                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBlock Text="ID:" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
+                                    <TextBox x:Name="txtidusuario" Style="{StaticResource TextBoxStyle1}" Width="60" Height="30" FontSize="16" IsReadOnly="True" Background="Transparent" Margin="0,0,10,0"/>
+                                    <TextBlock Text="Usuario:" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
+                                    <TextBox x:Name="txtuser" Style="{StaticResource TextBoxStyle1}" Width="160" Height="30" FontSize="16" IsReadOnly="True" Background="Transparent" Margin="20,0,10,0"/>
+                                </StackPanel>
+                                <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBlock Text="Nombres: " FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
+                                    <TextBox x:Name="txtnombre" Style="{StaticResource TextBoxStyle1}" FontSize="16" Width="160" Height="30" Margin="100,0,10,0"/>
+                                </StackPanel>
+                                <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBlock Text="Apellidos: " FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
+                                    <TextBox x:Name="txtapellido" Style="{StaticResource TextBoxStyle1}" Width="160" FontSize="16" Height="30" Margin="100,0,10,0"/>
+                                </StackPanel>
+                                <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBlock Text="E-Mail: " FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
+                                    <TextBox x:Name="txtemail" Style="{StaticResource TextBoxStyle1}" Width="160" FontSize="16" Height="30" Margin="120,0,10,0"/>
+                                </StackPanel>
+                                <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBlock Text="Contraseña Actual: " FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
+                                    <PasswordBox x:Name="txtpassactual" Style="{StaticResource PasswordBoxStyle1}" Width="160" Height="30" FontSize="16" Margin="30,0,10,0"/>
+                                </StackPanel>
+                                <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBlock Text="Nueva Contraseña: " FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
+                                    <PasswordBox x:Name="txtpassnew1" Style="{StaticResource PasswordBoxStyle1}" Width="160" Height="30" FontSize="16" Margin="30,0,10,0"/>
+                                </StackPanel>
+                                <StackPanel Grid.Row="8" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBlock Text="Confirmar Contraseña: " FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
+                                    <PasswordBox x:Name="txtpassnew2" Style="{StaticResource PasswordBoxStyle1}" Width="160" Height="30" FontSize="16" Margin="0,0,10,0"/>
+                                </StackPanel>
+                                <StackPanel Grid.Row="9" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button Content="Actualizar" Style="{StaticResource ButtonStyleNew}" Height="30" Width="160" FontSize="16" x:Name="btnActualizar" Click="btnActualizar_Click">
+                                        
+                                    </Button>
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+    </Border>
+
+</Page>
